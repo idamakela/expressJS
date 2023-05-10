@@ -9,4 +9,18 @@ router.get('/', (req, res) => {
   res.json(movies);
 });
 
+//GET specific movie
+router.get('/:id', (req, res) => {
+  const id = req.params.id;
+  const movie = movies.find((mov) => mov.imdbID === id);
+
+  if (!movie) {
+    return res
+      .status(404)
+      .json({ message: 'No movie with that ID was found!' });
+  }
+
+  res.json(movie);
+});
+
 module.exports = router;

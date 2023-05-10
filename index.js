@@ -8,7 +8,7 @@ const port = 3001;
 // app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.json('Hello World!');
+  res.send('Hello World!');
 });
 
 app.use('/movies', movies);
