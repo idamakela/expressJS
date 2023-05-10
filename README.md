@@ -14,12 +14,12 @@ This is a simple rest api containing bond movies written in Node.js, with the he
 
 ### GET all the moves
 
-Method: `GET`
-URL: `/movies`
+* Method: `GET`
+* URL: `/movies`
 
 ### GET specific movie
 
-Method: `GET`
-URL: `/movies/ID`
+* Method: `GET`
+* URL: `/movies/ID`
 
 Change `ID` to a specific movies id!
