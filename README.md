@@ -22,4 +22,4 @@ This is a simple rest api containing bond movies written in Node.js, with the he
 * Method: `GET`
 * URL: `/movies/ID`
 
-Change `ID` to a specific movie id!
+Change `ID` to a specific movie id! For example `tt6110504`
