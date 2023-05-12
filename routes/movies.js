@@ -23,7 +23,7 @@ router.get('/:id', (req, res) => {
   res.json(movie);
 });
 
-//POST a movie 
+//POST a movie
 let newID = 64378;
 
 router.post('/', (req, res) => {
@@ -34,18 +34,29 @@ router.post('/', (req, res) => {
     imdbID: numID,
   };
 
-  console.log(movie)
-  console.log(newMovie)
+  console.log(movie);
+  console.log(newMovie);
 
-  newID++
+  newID++;
 
-  movies.push(newMovie)
-  res.json(newMovie)
-})
+  movies.push(newMovie);
+  res.json(newMovie);
+});
 
 //PUT updates into a specific movie
 router.put('/:id', (req, res) => {
+  const id = req.params.id;
+  const movie = req.body.movie;
+  const index = movies.findIndex((mov) => mov.imdbID === id);
 
-})
+  if (index === -1) {
+    return res.status(404).json({ message: 'No movie found with that ID' });
+  }
+
+  const updatedMovie = { ...movies[index], ...movie };
+  movies[index] = updatedMovie;
+
+  res.json(updatedMovie);
+});
 
 module.exports = router;
