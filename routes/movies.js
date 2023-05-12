@@ -59,4 +59,19 @@ router.put('/:id', (req, res) => {
   res.json(updatedMovie);
 });
 
+// DELETE specific movie
+router.delete('/:id', (req, res) => {
+  const id = req.params.id;
+  const movie = movies.find((mov) => mov.imdbID === id);
+
+  if (!movie) {
+    return res.status(404).json({ message: 'No movie found with that ID' });
+  }
+
+  const newMoviesData = movies.filter((mov) => mov.imdbID !== id);
+  movies = newMoviesData;
+
+  res.json({ message: 'Movie successfully deleted' });
+});
+
 module.exports = router;

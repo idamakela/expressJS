@@ -1,8 +1,8 @@
 # BOND movies API
 
-This is a simple rest api containing bond movies written in Node.js, with the help of Express.js and Nodemon. 
+This is a simple rest api containing bond movies written in Node.js, with the help of Express.js and Nodemon.
 
-## Installation 
+## Installation
 
 1. Install node.js, unless you already have it installed.
 2. Run `npm install`, to install dependencies.
@@ -14,20 +14,20 @@ This is a simple rest api containing bond movies written in Node.js, with the he
 
 ### GET all the moves
 
-* Method: `GET`
-* URL: `/movies`
+- Method: `GET`
+- URL: `/movies`
 
 ### GET specific movie
 
-* Method: `GET`
-* URL: `/movies/ID`
+- Method: `GET`
+- URL: `/movies/ID`
 
 Change `ID` to a specific movie id! For example `tt6110504`
 
 ### POST a new movie
 
-* Method: `POST`
-* URL: `/movies`
+- Method: `POST`
+- URL: `/movies`
 
 **In postman**: add a new raw JSON object to the request body with the below example syntax:
 `{
@@ -42,8 +42,8 @@ Make sure to **ALWAYS** add an imdbID!
 
 ### PUT updated info to specifik movie
 
-* Method: `PUT`
-* URL: `/movies/ID`
+- Method: `PUT`
+- URL: `/movies/ID`
 
 Change `ID` to a specific movie id! For example `tt6110504`.
 
@@ -53,3 +53,9 @@ Change `ID` to a specific movie id! For example `tt6110504`.
     }
 }`
 
+### DELETE specifik movie
+
+- Method: `DELETE`
+- URL: `/movies/ID`
+
+Change `ID` to a specific movie id! For example `tt6110504`.
