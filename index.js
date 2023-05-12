@@ -7,6 +7,7 @@ const port = 3001;
 //MIDDLEWARE
 app.use(express.json());
 
+// TEST 
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
