@@ -24,7 +24,6 @@ router.get('/:id', (req, res) => {
 });
 
 //POST a movie 
-// what happens if they dont add an imdbID ??
 let newID = 64378;
 
 router.post('/', (req, res) => {
@@ -45,6 +44,8 @@ router.post('/', (req, res) => {
 })
 
 //PUT updates into a specific movie
+router.put('/:id', (req, res) => {
 
+})
 
 module.exports = router;
