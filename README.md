@@ -39,3 +39,17 @@ Change `ID` to a specific movie id! For example `tt6110504`
 }`
 
 Make sure to **ALWAYS** add an imdbID!
+
+### PUT updated info to specifik movie
+
+* Method: `PUT`
+* URL: `/movies/ID`
+
+Change `ID` to a specific movie id! For example `tt6110504`.
+
+**In postman:** add the updated info for the specific movie in a raw JSON object to the request body with the below example syntax: `{
+    "movie": {
+        "Year": "2024"
+    }
+}`
+
