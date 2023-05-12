@@ -7,6 +7,8 @@ const port = 3001;
 //MIDDLEWARE
 app.use(express.json());
 
+//ADD API KEY plus PROPPER DOCUMENTATION
+
 // TEST 
 app.get('/', (req, res) => {
   res.send('Hello World!');
