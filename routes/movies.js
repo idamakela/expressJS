@@ -23,4 +23,24 @@ router.get('/:id', (req, res) => {
   res.json(movie);
 });
 
+//POST a movie
+let newID = 64378;
+
+router.post('/', (req, res) => {
+  const movie = req.body.movie;
+  const numID = newID.toString();
+  const newMovie = {
+    ...movie,
+    imdbID: numID,
+  };
+
+  console.log(movie)
+  console.log(newMovie)
+
+  newID++
+
+  movies.push(newMovie)
+  res.json(newMovie)
+})
+
 module.exports = router;

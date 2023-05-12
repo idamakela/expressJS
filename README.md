@@ -23,3 +23,19 @@ This is a simple rest api containing bond movies written in Node.js, with the he
 * URL: `/movies/ID`
 
 Change `ID` to a specific movie id! For example `tt6110504`
+
+### POST a new movie
+
+* Method: `POST`
+* URL: `/movies`
+
+**In postman**: add a new raw JSON object to the request body with the below example syntax:
+`{
+    "movie": {
+        "imdbID": "51564",
+        "Title": "Bond: the history of Bond",
+        "Year": "2023"
+    }
+}`
+
+Make sure to **ALWAYS** add an imdbID!
