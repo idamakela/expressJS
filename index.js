@@ -30,7 +30,10 @@ app.use((req, res, next) => {
 
 // TEST
 app.get('/', (req, res) => {
-  res.send('Hello there! You have a valid API key, visit http://localhost:PORT/movies?apiKey=API_KEY to view the data!');
+  res.json({
+    message:
+      'Hello there! You have a valid API key, please visit http://localhost:PORT/movies?apiKey=API_KEY to view the data!',
+  });
 });
 
 app.use('/movies', movies);
