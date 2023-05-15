@@ -59,3 +59,8 @@ Change `ID` to a specific movie id! For example `tt6110504`.
 - URL: `/movies/ID`
 
 Change `ID` to a specific movie id! For example `tt6110504`.
+
+
+## API KEY
+
+This API uses a query API key. To make a request with an API key: request for `http://localhost:PORT?apiKey=API_KEY`, where PORT is changed to the localhost port the server is running on and change the API_KEY to your API key. 
