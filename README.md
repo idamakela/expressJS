@@ -17,19 +17,23 @@ This is a simple REST API containing bond movies written in Node.js, with the he
 - Method: `GET`
 - URL: `/movies`
 
+**In postman:** send a request to the localhost server route `/movies` with the method `GET`. View the response in the response body as JSON object.
+
 ### GET a specific movie
 
 - Method: `GET`
 - URL: `/movies/ID`
 
-Change `ID` to a specific movie id! For example `tt6110504`
+Change `ID` to a specific movie id! For example `tt6110504`.
+
+**In postman:** send a request to the localhost server route `/movies/ID` with the method `GET`. View the response in the response body as JSON object.
 
 ### POST a new movie
 
 - Method: `POST`
 - URL: `/movies`
 
-**In postman**: add a new raw JSON object to the request body with the below example syntax:
+**In postman:** add a new raw JSON object to the request body with the below example syntax:
 `{
     "movie": {
         "imdbID": "51564",
@@ -64,3 +68,5 @@ Change `ID` to a specific movie id! For example `tt6110504`.
 ## API KEY
 
 This API uses a query API key. To make a request with an API key: request for `http://localhost:PORT?apiKey=API_KEY`, where PORT is changed to the localhost port the server is running on and change the API_KEY to your API key. 
+
+*Psst! Try API_KEY =  8*
