@@ -98,6 +98,8 @@ Change `ID` to a specific movie id! For example `tt6110504`.
 }
 ```
 
+**Expected response:** the updated JSON movie object. 
+
 ### DELETE a specifik movie
 
 - Method: `DELETE`
@@ -105,6 +107,7 @@ Change `ID` to a specific movie id! For example `tt6110504`.
 
 Change `ID` to a specific movie id! For example `tt6110504`.
 
+**Expected response:** `{ message: 'Movie successfully deleted' }`
 
 ## API KEY
 
