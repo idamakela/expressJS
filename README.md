@@ -20,7 +20,7 @@ This is a simple REST API containing bond movies written in Node.js, with the he
 **In postman:** send a request to the localhost server route `/movies` with the method `GET`. View the response in the response body as JSON object.
 
 **Expected response:** 
-    `[
+    ```[
         {
             "Title": "Becoming Bond",
             "Year": "2017",
@@ -32,7 +32,7 @@ This is a simple REST API containing bond movies written in Node.js, with the he
             "Writer": "Josh Greenbaum",
             ...
         }
-    ]`
+    ]```
 
 ### GET a specific movie
 
