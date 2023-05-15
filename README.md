@@ -12,6 +12,8 @@ This is a simple REST API containing bond movies written in Node.js, with the he
 
 ## API-endpoints
 
+**Remember** to attach an API key to the request, see below in the docs!
+
 ### GET all the movies
 
 - Method: `GET`
@@ -45,21 +47,40 @@ Change `ID` to a specific movie id! For example `tt6110504`.
 
 **In postman:** send a request to the localhost server route `/movies/ID` with the method `GET`. View the response in the response body as JSON object.
 
+**Expected response:**
+```
+{
+    "Title": "Becoming Bond",
+    "Year": "2017",
+    "Rated": "TV-MA",
+    "Released": "20 May 2017",
+    "Runtime": "95 min",
+    "Genre": "Documentary, Biography, Comedy",
+    "Director": "Josh Greenbaum",
+    "Writer": "Josh Greenbaum",
+    ...
+}
+```
+
 ### POST a new movie
 
 - Method: `POST`
 - URL: `/movies`
 
 **In postman:** add a new raw JSON object to the request body with the below example syntax:
-`{
+```
+{
     "movie": {
         "imdbID": "51564",
         "Title": "Bond: the history of Bond",
         "Year": "2023"
     }
-}`
+}
+```
 
 Make sure to **ALWAYS** add an imdbID!
+
+**Expected response:** the new JSON object, for example in the above example. 
 
 ### PUT updated info into a specifik movie
 
@@ -68,11 +89,14 @@ Make sure to **ALWAYS** add an imdbID!
 
 Change `ID` to a specific movie id! For example `tt6110504`.
 
-**In postman:** add the updated info for the specific movie in a raw JSON object to the request body with the below example syntax: `{
+**In postman:** add the updated info for the specific movie in a raw JSON object to the request body with the below example syntax: 
+```
+{
     "movie": {
         "Year": "2024"
     }
-}`
+}
+```
 
 ### DELETE a specifik movie
 
