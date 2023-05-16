@@ -21,7 +21,8 @@ This is a simple REST API containing bond movies written in Node.js, with the he
 
 **In postman:** send a request to the localhost server route `/movies` with the method `GET`. View the response in the response body as JSON object.
 
-**Expected response:** 
+**Expected response:**
+
 ```
 [
     {
@@ -48,6 +49,7 @@ Change `ID` to a specific movie id! For example `tt6110504`.
 **In postman:** send a request to the localhost server route `/movies/ID` with the method `GET`. View the response in the response body as JSON object.
 
 **Expected response:**
+
 ```
 {
     "Title": "Becoming Bond",
@@ -68,6 +70,7 @@ Change `ID` to a specific movie id! For example `tt6110504`.
 - URL: `/movies`
 
 **In postman:** add a new raw JSON object to the request body with the below example syntax:
+
 ```
 {
     "movie": {
@@ -80,7 +83,7 @@ Change `ID` to a specific movie id! For example `tt6110504`.
 
 Make sure to **ALWAYS** add an imdbID!
 
-**Expected response:** the new JSON object, for example in the above example. 
+**Expected response:** the new JSON object, for example in the above example.
 
 ### PUT updated info into a specifik movie
 
@@ -89,7 +92,8 @@ Make sure to **ALWAYS** add an imdbID!
 
 Change `ID` to a specific movie id! For example `tt6110504`.
 
-**In postman:** add the updated info for the specific movie in a raw JSON object to the request body with the below example syntax: 
+**In postman:** add the updated info for the specific movie in a raw JSON object to the request body with the below example syntax:
+
 ```
 {
     "movie": {
@@ -98,7 +102,7 @@ Change `ID` to a specific movie id! For example `tt6110504`.
 }
 ```
 
-**Expected response:** the updated JSON movie object. 
+**Expected response:** the updated JSON movie object.
 
 ### DELETE a specifik movie
 
@@ -111,6 +115,20 @@ Change `ID` to a specific movie id! For example `tt6110504`.
 
 ## API KEY
 
-This API uses a query API key. To make a request with an API key: request for `http://localhost:PORT?apiKey=API_KEY`, where PORT is changed to the localhost port the server is running on and change the API_KEY to your API key. 
+This API uses a query API key. To make a request with an API key: request for `http://localhost:PORT?apiKey=API_KEY`, where PORT is changed to the localhost port the server is running on and change the API_KEY to your API key.
 
-*Psst! Try API_KEY =  8*
+_Psst! Try API_KEY = 8_
+
+### POST a new API key
+
+- Method: `POST`
+- URL: `/apiKeys`
+
+**In postman:** Start a `POST` request to `http://localhost:PORT/apiKeys?apiKey=API_KEY`, the new apiKey is added from the body as a raw JSON object with the following example syntax:
+
+```
+{
+    "apiKey": "33"
+}
+```
+**Expected response:** an array of all the valid API keys
