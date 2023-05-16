@@ -15,7 +15,9 @@ router.get('/:id', (req, res) => {
   const movie = movies.find((mov) => mov.imdbID === id);
 
   if (!movie) {
-    return res.status(404).json({ message: 'No movie with that ID was found!' });
+    return res
+      .status(404)
+      .json({ message: 'No movie with that ID was found!' });
   }
 
   res.json(movie);
@@ -48,7 +50,9 @@ router.put('/:id', (req, res) => {
   const index = movies.findIndex((mov) => mov.imdbID === id);
 
   if (index === -1) {
-    return res.status(404).json({ message: 'No movie with that ID was found!' });
+    return res
+      .status(404)
+      .json({ message: 'No movie with that ID was found!' });
   }
 
   const updatedMovie = { ...movies[index], ...movie };
@@ -63,7 +67,9 @@ router.delete('/:id', (req, res) => {
   const movie = movies.find((mov) => mov.imdbID === id);
 
   if (!movie) {
-    return res.status(404).json({ message: 'No movie with that ID was found!' });
+    return res
+      .status(404)
+      .json({ message: 'No movie with that ID was found!' });
   }
 
   const newMoviesData = movies.filter((mov) => mov.imdbID !== id);
