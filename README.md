@@ -81,7 +81,7 @@ Change `ID` to a specific movie id! For example `tt6110504`.
     }
 }
 ```
-**Required  fields:** Title, Year, Released, Genre. 
+**Required  fields:** Title, Year (numerical), Released, Genre. 
 
 **Expected response:** the new JSON object, for example in the above example.
 

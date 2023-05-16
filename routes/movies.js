@@ -34,6 +34,8 @@ router.post('/', (req, res) => {
     imdbID: numID,
   };
 
+  const requiredData = 
+
   //Check for double data??
   console.log(movie);
   console.log(newMovie);
