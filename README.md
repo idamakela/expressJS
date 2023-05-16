@@ -74,14 +74,14 @@ Change `ID` to a specific movie id! For example `tt6110504`.
 ```
 {
     "movie": {
-        "imdbID": "51564",
         "Title": "Bond: the history of Bond",
-        "Year": "2023"
+        "Year": "2023",
+        "Released": "2 july 2023",
+        "Genre": "Documentary"
     }
 }
 ```
-
-Make sure to **ALWAYS** add an imdbID!
+**Required  fields:** Title, Year, Released, Genre. 
 
 **Expected response:** the new JSON object, for example in the above example.
 
