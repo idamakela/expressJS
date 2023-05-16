@@ -115,7 +115,7 @@ Change `ID` to a specific movie id! For example `tt6110504`.
 
 ## API KEY
 
-This API uses a query API key. To make a request with an API key: request for `http://localhost:PORT?apiKey=API_KEY`, where PORT is changed to the localhost port the server is running on and change the API_KEY to your API key.
+This API uses a query API key. To make a request with an API key: request for `http://localhost:PORT?apiKey=VALID_API_KEY`, where `PORT` is changed to the localhost port the server is running on and change the `VALID_API_KEY` to your API key.
 
 _Psst! Try API_KEY = 8_
 
@@ -124,11 +124,23 @@ _Psst! Try API_KEY = 8_
 - Method: `POST`
 - URL: `/apiKeys`
 
-**In postman:** Start a `POST` request to `http://localhost:PORT/apiKeys?apiKey=API_KEY`, the new apiKey is added from the body as a raw JSON object with the following example syntax:
+**In postman:** Start a `POST` request to `/apiKeys?apiKey=VALID_API_KEY`, the new apiKey is added to the request body as a raw JSON object with the following example syntax:
 
 ```
 {
     "apiKey": "33"
 }
 ```
+
+**Remember** to put a valid API key as API_KEY in the URL!
+
 **Expected response:** an array of all the valid API keys
+
+### DELETE a API key
+
+- Method: `DELETE`
+- URL: `/apiKeys/API_KEY`
+
+**In postman:** set the API key you want to delete as a parameter to the URL, for example `/apiKeys/33`.
+
+**Expected response:** `{ message: 'API key successfully deleted' }`

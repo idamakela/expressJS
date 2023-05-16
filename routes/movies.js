@@ -34,6 +34,7 @@ router.post('/', (req, res) => {
     imdbID: numID,
   };
 
+  //Check for double data??
   console.log(movie);
   console.log(newMovie);
 

@@ -1,20 +1,37 @@
 const express = require('express');
 const router = express.Router();
-const apiKeys = require('../apiKeys');
+const data = require('../apiKeys');
 
-let apiKeysArr = apiKeys;
+let apiKeys = data;
 
 //GET all API keys
 router.get('/', (req, res) => {
-  res.json(apiKeysArr);
+  res.json(apiKeys);
 });
 
 //POST a new API key
 router.post('/', (req, res) => {
   const newApiKey = req.body.apiKey;
-  apiKeysArr.push(newApiKey);
+  apiKeys.push(newApiKey);
 
-  res.json(apiKeysArr);
+  res.json(apiKeys);
+});
+
+//DELETE an API key
+router.delete('/:apiKey', (req, res) => {
+  const apiKey = req.params.apiKey;
+  const foundApiKey = apiKeys.find((i) => i === apiKey);
+
+  if (!foundApiKey) {
+    return res.status(404).json({
+      message: 'No API key was found, and therefore it cannot be deleted',
+    });
+  }
+
+  const newApiKeys = apiKeys.filter((i) => i !== apiKey);
+  apiKeys = newApiKeys;
+
+  res.json({ message: 'API key successfully deleted' });
 });
 
 module.exports = router;
