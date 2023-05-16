@@ -132,7 +132,7 @@ _Psst! Try API_KEY = 8_
 }
 ```
 
-**Remember** to put a valid API key as API_KEY in the URL!
+**Remember** to put a valid API key as `VALID_API_KEY` in the URL!
 
 **Expected response:** an array of all the valid API keys
 
