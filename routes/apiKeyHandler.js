@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
   const newApiKey = req.body.apiKey;
   apiKeys.push(newApiKey);
 
-  res.json(apiKeys);
+  res.status(201).json(apiKeys);
 });
 
 //DELETE an API key
@@ -31,7 +31,7 @@ router.delete('/:apiKey', (req, res) => {
   const newApiKeys = apiKeys.filter((i) => i !== apiKey);
   apiKeys = newApiKeys;
 
-  res.json({ message: 'API key successfully deleted' });
+  res.status(204).json({ message: 'API key successfully deleted' });
 });
 
 module.exports = router;

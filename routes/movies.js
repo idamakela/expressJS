@@ -55,10 +55,6 @@ router.post('/', (req, res) => {
     });
   }
 
-  //Check for double data??
-  console.log(movie);
-  console.log(newMovie);
-
   newID++;
 
   movies.push(newMovie);
@@ -78,7 +74,7 @@ router.put('/:id', (req, res) => {
   }
 
   const requiredData = [movie.Title, movie.Year, movie.Released, movie.Genre];
-  
+
   const emptyRequiredData = requiredData.every(
     (item) => item !== '' && item !== undefined
   );
