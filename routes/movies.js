@@ -34,7 +34,28 @@ router.post('/', (req, res) => {
     imdbID: numID,
   };
 
-  const requiredData = 
+  const requiredData = [
+    newMovie.Title,
+    newMovie.Year,
+    newMovie.Released,
+    newMovie.Genre,
+  ];
+
+  console.log({ requiredData }, typeof requiredData[1]);
+
+  const emptyRequiredData = requiredData.every(
+    (item) => item !== '' && item !== undefined
+  );
+
+  const checkPattern = /^\d{4,}$/;
+  const correctRequiredData = checkPattern.test(newMovie.Year);
+
+  if (!emptyRequiredData || !correctRequiredData) {
+    return res.status(400).json({
+      message:
+        'Please fill in the required data to be able to proceed: Title, Year, Released and Genre.',
+    });
+  }
 
   //Check for double data??
   console.log(movie);
