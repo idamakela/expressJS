@@ -41,8 +41,6 @@ router.post('/', (req, res) => {
     newMovie.Genre,
   ];
 
-  console.log({ requiredData }, typeof requiredData[1]);
-
   const emptyRequiredData = requiredData.every(
     (item) => item !== '' && item !== undefined
   );
@@ -64,7 +62,7 @@ router.post('/', (req, res) => {
   newID++;
 
   movies.push(newMovie);
-  res.json(newMovie);
+  res.status(201).json(newMovie);
 });
 
 //PUT updates into a specific movie
@@ -77,6 +75,22 @@ router.put('/:id', (req, res) => {
     return res
       .status(404)
       .json({ message: 'No movie with that ID was found!' });
+  }
+
+  const requiredData = [movie.Title, movie.Year, movie.Released, movie.Genre];
+  
+  const emptyRequiredData = requiredData.every(
+    (item) => item !== '' && item !== undefined
+  );
+
+  const checkPattern = /^\d{4,}$/;
+  const correctRequiredData = checkPattern.test(movie.Year);
+
+  if (!emptyRequiredData || !correctRequiredData) {
+    return res.status(400).json({
+      message:
+        'Please fill in the required data to be able to proceed: Title, Year, Released and Genre.',
+    });
   }
 
   const updatedMovie = { ...movies[index], ...movie };
@@ -99,7 +113,7 @@ router.delete('/:id', (req, res) => {
   const newMoviesData = movies.filter((mov) => mov.imdbID !== id);
   movies = newMoviesData;
 
-  res.json({ message: 'Movie successfully deleted' });
+  res.status(204).json({ message: 'Movie successfully deleted' });
 });
 
 module.exports = router;
